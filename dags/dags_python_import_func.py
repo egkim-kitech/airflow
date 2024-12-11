@@ -1,12 +1,13 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
+import pendulum
 from common.common_func import get_sftp
 
 with DAG(
     dag_id = 'python_import_func',
     schedule="0 0 0 0 0",
-    start_date=datetime(2023, 1, 1,tz="Asia/Seoul"),
+    start_date=pendulum.datetime(2021, 1, 1, tz="Asia/Seoul"),
     catchup=False
 ) as dag:
 

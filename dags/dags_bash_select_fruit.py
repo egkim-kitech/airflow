@@ -15,7 +15,7 @@ with DAG(
     catchup=False,
 ) as dag:
     # make empthy operator
-    t1_APPLE = BashOperator(task_id="t1_APPLE", bash_command="/opt/airflow/plugins/shell/select_fruit.sh APPLE")
-    t2_BANANA = BashOperator(task_id="t2_BANANA", bash_command="/opt/airflow/plugins/shell/select_fruit.sh BANANA")
+    t1_APPLE = BashOperator(task_id="t1_APPLE", bash_command="/opt/airflow/plugins/select_fruit.sh APPLE")
+    t2_BANANA = BashOperator(task_id="t2_BANANA", bash_command="/opt/airflow/plugins/select_fruit.sh BANANA")
 
     t1_APPLE >> t2_BANANA
